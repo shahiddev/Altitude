@@ -47,7 +47,7 @@ namespace AltitudeBand
 		TextView pressure;
 		TextView height;
 		int count;
-		double[] filter = new double[20];
+		double[] filter = new double[10];
 
 		double zeroAGL;
 		int altitudeAGL = 88888;
@@ -73,24 +73,21 @@ namespace AltitudeBand
 				ElementId = 2,
 				Text = pullAltitude.ToString() + " " + units
 			});
-			if (altitudeAGL <= 0) 
-//			if (altitudeAGL <= 1000) 
+			if (altitudeAGL <= 1000) 
 			{
 				pageContext.Data.Add (new ImageData {
 					ElementId = 10,	// blue
 					ImageIndex = 1
 				});
 			} 
-			else if (altitudeAGL <= 1) 
-//			else if (altitudeAGL <= 2500) 
+			else if (altitudeAGL <= 2500) 
 			{
 				pageContext.Data.Add (new ImageData {
 					ElementId = 11, // red
 					ImageIndex = 1
 				});
 			} 
-			else if (altitudeAGL <= 2) 
-//			else if (altitudeAGL <= 3000) 
+			else if (altitudeAGL <= 3000) 
 			{
 				pageContext.Data.Add (new ImageData {
 					ElementId = 12, // yellow
